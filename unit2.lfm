@@ -130,13 +130,13 @@ object Form1: TForm1
         Enabled = True
       end>
     FooterOptions.Active = True
-    FooterOptions.Color = 4259584
+    FooterOptions.Color = clInactiveCaption
     FooterOptions.RowCount = 1
     FooterOptions.DrawFullLine = False
     SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
     SearchOptions.FromStart = False
     OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgFooterRows, rdgAllowQuickFilter]
-    FooterColor = 4259584
+    FooterColor = clInactiveCaption
     FooterRowCount = 1
     Align = alBottom
     Color = clWindow

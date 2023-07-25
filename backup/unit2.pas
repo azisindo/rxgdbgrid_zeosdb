@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, DB, Forms, Controls, Graphics, Dialogs, DBCtrls, RxDBGrid,
-  ZConnection, ZDataset;
+  RxDBGridFooterTools, ZConnection, ZDataset;
 
 type
 
@@ -16,6 +16,7 @@ type
     DataSource1: TDataSource;
     DBEdit1: TDBEdit;
     RxDBGrid1: TRxDBGrid;
+    RxDBGridFooterTools1: TRxDBGridFooterTools;
     ZConnection1: TZConnection;
     ZQuery1: TZQuery;
   private
