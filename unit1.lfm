@@ -1,0 +1,171 @@
+object Form1: TForm1
+  Left = 3130
+  Height = 604
+  Top = 37
+  Width = 1083
+  Caption = 'Form1'
+  ClientHeight = 604
+  ClientWidth = 1083
+  DesignTimePPI = 144
+  object Panel1: TPanel
+    Left = 0
+    Height = 75
+    Top = 0
+    Width = 1083
+    Align = alTop
+    ClientHeight = 75
+    ClientWidth = 1083
+    TabOrder = 0
+    object DBEdit1: TDBEdit
+      Left = 404
+      Height = 33
+      Top = 20
+      Width = 204
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object Edit1: TEdit
+      Left = 76
+      Height = 33
+      Top = 20
+      Width = 140
+      TabOrder = 1
+      Text = 'Edit1'
+    end
+  end
+  object RxDBGrid1: TRxDBGrid
+    Left = 150
+    Height = 150
+    Top = 151
+    Width = 300
+    ColumnDefValues.BlobText = '(blob)'
+    TitleButtons = False
+    AutoSort = True
+    KeyStrokes = <    
+      item
+        Command = rxgcShowFindDlg
+        ShortCut = 16454
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowColumnsDlg
+        ShortCut = 16471
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowFilterDlg
+        ShortCut = 16468
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowSortDlg
+        ShortCut = 16467
+        Enabled = True
+      end    
+      item
+        Command = rxgcShowQuickFilter
+        ShortCut = 16465
+        Enabled = True
+      end    
+      item
+        Command = rxgcHideQuickFilter
+        ShortCut = 16456
+        Enabled = True
+      end    
+      item
+        Command = rxgcSelectAll
+        ShortCut = 16449
+        Enabled = True
+      end    
+      item
+        Command = rxgcDeSelectAll
+        ShortCut = 16429
+        Enabled = True
+      end    
+      item
+        Command = rxgcInvertSelection
+        ShortCut = 16426
+        Enabled = True
+      end    
+      item
+        Command = rxgcOptimizeColumnsWidth
+        ShortCut = 16427
+        Enabled = True
+      end    
+      item
+        Command = rxgcCopyCellValue
+        ShortCut = 16451
+        Enabled = True
+      end>
+    FooterOptions.DrawFullLine = False
+    SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
+    SearchOptions.FromStart = False
+    OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgAllowQuickFilter]
+    Color = clWindow
+    DrawFullLine = False
+    FocusColor = clRed
+    SelectedColor = clHighlight
+    DataSource = DataSource1
+    Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    TabOrder = 1
+  end
+  object ZQuery1: TZQuery
+    Connection = ZConnection1
+    SQL.Strings = (
+      'select * from rxdgrid'
+    )
+    Params = <>
+    Left = 760
+    Top = 20
+    object ZQuery1vno: TZIntegerField
+      FieldKind = fkData
+      FieldName = 'vno'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object ZQuery1nama: TZRawStringField
+      FieldKind = fkData
+      FieldName = 'nama'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 10
+    end
+    object ZQuery1nilai: TZIntegerField
+      FieldKind = fkData
+      FieldName = 'nilai'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = ZQuery1
+    Left = 832
+    Top = 16
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF8
+    Properties.Strings = (
+      'RawStringEncoding=DB_CP'
+    )
+    Connected = True
+    SQLHourGlass = True
+    HostName = 'localhost'
+    Port = 3306
+    Database = 'hrms'
+    User = 'root'
+    Password = 'password'
+    Protocol = 'mariadb'
+    LibraryLocation = 'C:\Program Files\MariaDB 11.1\lib\libmariadb.dll'
+    Left = 664
+    Top = 16
+  end
+end
