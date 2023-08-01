@@ -1,0 +1,13 @@
+CREATE TABLE rxdgrid(vno INTEGER,nama VARCHAR(10),nilai INTEGER);
+
+INSERT INTO rxdgrid VALUES (1,'AZIS',10);
+INSERT INTO rxdgrid VALUES (2,'UDIN',200);
+INSERT INTO rxdgrid VALUES (3,'AWAL',300);
+
+COMMIT;
+
+SELECT * FROM rxdgrid;
+
+
+ALTER TABLE rxdgrid
+ADD PRIMARY KEY(vno);

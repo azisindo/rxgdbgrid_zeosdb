@@ -130,13 +130,13 @@ object Form1: TForm1
         Enabled = True
       end>
     FooterOptions.Active = True
-    FooterOptions.Color = 4259584
+    FooterOptions.Color = clInactiveCaption
     FooterOptions.RowCount = 1
     FooterOptions.DrawFullLine = False
     SearchOptions.QuickSearchOptions = [loCaseInsensitive, loPartialKey]
     SearchOptions.FromStart = False
     OptionsRx = [rdgAllowColumnsForm, rdgAllowDialogFind, rdgFooterRows, rdgAllowQuickFilter]
-    FooterColor = 4259584
+    FooterColor = clInactiveCaption
     FooterRowCount = 1
     Align = alBottom
     Color = clWindow
@@ -148,11 +148,39 @@ object Form1: TForm1
     Options = [dgEditing, dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
     TabOrder = 1
   end
+  object btn_save: TBCMaterialDesignButton
+    Left = 496
+    Height = 50
+    Top = 88
+    Width = 185
+    TextFont = 'default'
+    Caption = 'Simpan'
+    OnClick = btn_saveClick
+  end
+  object btn_ping: TBCMaterialDesignButton
+    Left = 492
+    Height = 50
+    Top = 152
+    Width = 185
+    TextFont = 'default'
+    Caption = 'Ping koneksi'
+    OnClick = btn_pingClick
+  end
+  object close_db: TBCMaterialDesignButton
+    Left = 496
+    Height = 50
+    Top = 20
+    Width = 185
+    TextFont = 'default'
+    Caption = 'clossing db'
+    OnClick = close_dbClick
+  end
   object ZConnection1: TZConnection
     ControlsCodePage = cCP_UTF8
     Properties.Strings = (
       'RawStringEncoding=DB_CP'
     )
+    AutoCommit = False
     Connected = True
     SQLHourGlass = True
     Port = 3306
